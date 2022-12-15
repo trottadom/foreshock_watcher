@@ -50,6 +50,8 @@ def swa_load_grnd_mom(startdate, enddate, path=None):
     if isinstance(enddate, int):
         enddate = _date2str(enddate)
     
+    print("Scanning...scanned")
+
     instrument = a.Instrument('SWA')
     time = a.Time(startdate, enddate)
     level = a.Level(2)
@@ -60,4 +62,7 @@ def swa_load_grnd_mom(startdate, enddate, path=None):
     
     solo_swa = TimeSeries(files, concatenate=True)
     df_solo_swa = solo_swa.to_dataframe()
+
+    print("Scanned...SCANNED")
+
     return df_solo_swa
